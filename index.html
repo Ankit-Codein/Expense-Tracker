@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<div class="container">
+    <header>
+        <div class="brand">
+            <span class="dot" aria-hidden="true"></span>
+            <div>
+                <div style="font-size:18px; font-weight:800;">Expense Tracker</div>
+            </div>
+        </div>
+        <!-- <div class="filters" aria-label="Quick filters">
+            <span class="chip">This Month</span>
+            <span class="chip">Food</span>
+            <span class="chip">Travel</span>
+            <span class="chip">Bills</span>
+        </div> -->
+    </header>
+
+    <section class="summary" aria-label="Summary">
+        <div class="card">
+            <h4>Total Balance</h4>
+            <div class="value mono">₹ 0 <span class="tag">as of today</span></div>
+        </div>
+        <div class="card">
+            <h4>Total Income</h4>
+            <div id="income" class="value mono pos">+ ₹  <span class="tag">Aug</span></div>
+        </div>
+        <div class="card">
+            <h4>Total Expense</h4>
+            <div id="expense" class="value mono neg">− ₹  <span class="tag">Aug</span></div>
+        </div>
+    </section>
+
+    <section class="grid" >
+        <!-- Add Expense (UI only) -->
+        <div class="panel" aria-labelledby="add-expense">
+            <h3 id="add-expense">Add Transaction</h3>
+            <form>
+                <div class="field">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" placeholder="e.g., Dinner at Cafe" required />
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="amount">Amount</label>
+                        <input id="amount" type="number" inputmode="decimal" placeholder="e.g., 450" required />
+                    </div>
+                    <div class="field">
+                        <label for="type">Type</label>
+                        <select id="type" required>
+                            <option value="Expense">Expense</option>
+                            <option value="Income">Income</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option>Food</option>
+                            <option>Travel</option>
+                            <option>Shopping</option>
+                            <option>Bills</option>
+                            <option>Salary</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="date">Date</label>
+                        <input id="date" type="date" />
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="note">Notes (optional)</label>
+                    <textarea id="note" rows="3" placeholder="Add a short note..."></textarea>
+                </div>
+
+                <div class="actions">
+                    <button type="button" class="btn">Add Transaction</button>
+                    <button type="reset" class="btn secondary">Clear</button>
+                </div>
+                <p class="muted" style="font-size:12px;margin:6px 2px 0;">
+                    <span id="creater-name">Created by: ❤️ Ankit shah.</span>
+                </p>
+            </form>
+        </div>
+
+        <!-- Transactions -->
+        <div class="panel" aria-labelledby="transactions">
+            <h3 id="transactions">Transactions</h3>
+            <div class="table-wrap" role="region" aria-label="Transaction list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th class="right">Amount</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- VALUE -->
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="muted" style="text-align:center;font-size:12px;margin:8px 0 0;">
+        
+    </footer>
+</div>
+
+
+    
+</body>
+    <script src="script.js"></script>
+</html>
